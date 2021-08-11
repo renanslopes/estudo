@@ -68,11 +68,14 @@ console.log(`O montante total à juros simples será de: R$ ${jurosSimples(1000,
 //JUROS COMPOSTOS
 function jurosCompostos(capitalInicial, taxaJuros, tempoAplicacao){
     // Juros compostos = M = C · (1 + i)t
-    montante = capitalInicial * ((1 + (taxaJuros / 100) ^ tempoAplicacao))
-    console.log('Montante - ', montante)
+    expo= Math.pow((1 + (taxaJuros / 100)), tempoAplicacao)
+    //console.log(expo)
+    montante = capitalInicial * expo
+    //console.log('Montante - ', montante)
+
     return montante
 }
-console.log(`O montante total à juros compostos será de: R$ ${jurosCompostos(100, 5, 2)/*.toFixed(2)*/}`)
+console.log(`O montante total à juros compostos será de: R$ ${jurosCompostos(50000, 8, 36).toFixed(2)}`)
 
 
 
