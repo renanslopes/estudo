@@ -44,46 +44,22 @@ seguinte comando no console: console.log(0.1 + 0.2); O resultado será: 0.300000
 importante de observar, é o fato que o ponto é utilizado no lugar da vírgula e vice versa. Com isso, vamos fazer
 um exercício simples para mostrar dinheiro sempre da forma correta. Desenvolva uma função JavaScript para
 que ela receba um valor como 0.30000000000000004 e retorne R$0,30 (observe a vírgula e o ponto). */
-function formatar(valor = 0.30000000000000004) {
-    //return valor.toFixed(2)
-    return valor.toLocaleString('pt-BR',{maximumFractionDigits:2, minimumFractionDigits: 2})
-}
+function formatar(valor) {
 
-console.log (`R$ ${formatar()}`)
+}
 
 /* 06)​ Elabore duas funções que recebem três parâmetros: capital inicial, taxa de juros e tempo de aplicação. A
 primeira função retornará o montante da aplicação financeira sob o regime de juros simples e a segunda
-retornará o valor da aplicação sob o regime de juros compostos. */
+retornará o valor da aplicação sob o regime de juros compostos.
 
-//JUROS SIMPLES
-function jurosSimples(capitalInicial, taxaJuros, tempoAplicacao){
-    //Juros simples = j = c * i * t
-    jurosS = capitalInicial * (taxaJuros / 100) * tempoAplicacao
-    console.log
-    aplicacao = capitalInicial + jurosS
-    return aplicacao
-}
-console.log(`O montante total à juros simples será de: R$ ${jurosSimples(1000, 6, 20)}`)
-
-//JUROS COMPOSTOS
-function jurosCompostos(capitalInicial, taxaJuros, tempoAplicacao){
-    // Juros compostos = M = C · (1 + i)t
-    montante = capitalInicial * ((1 + (taxaJuros / 100) ^ tempoAplicacao))
-    console.log('Montante - ', montante)
-    return montante
-}
-console.log(`O montante total à juros compostos será de: R$ ${jurosCompostos(100, 5, 2)/*.toFixed(2)*/}`)
-
-
-
-/* 07) ​Uma das vantagens da programação é a automatização de tarefas que não gostamos de realizar. Dito isto,
+07) ​Uma das vantagens da programação é a automatização de tarefas que não gostamos de realizar. Dito isto,
 elabore uma função cujo objetivo é resolver a fórmula de Bhaskara. Para isso, sua função deve receber três
 parâmetros, “ax2”, “bx” e “c”, de tal modo que na equação: 3x² - 5x + 12 os valores seriam respectivamente: 3,
 -5, 12. Como retorno deve ser passado um vetor que tem 2 valores um para cada possível resultado, mesmo
 que os resultados sejam iguais. Caso o delta seja negativo, retorne, ao invés do vetor, um string com a frase:
-“Delta é negativo”. */
+“Delta é negativo”.
 
-/* 08) ​Pedro joga N jogos de basquete por temporada. Para saber como está ele está progredindo, ele mantém
+08) ​Pedro joga N jogos de basquete por temporada. Para saber como está ele está progredindo, ele mantém
 registro de todos os as pontuações feitas por jogo. Após cada jogo ele anota no novo valor e confere se o
 mesmo é maior ou menor que seu melhor e pior desempenho. Dada uma lista string = “pontuação1 pontuação2
 pontuação3 etc..”, escreva uma função que ao recebê-la irá comparar os valores um a um e irá retornar um
@@ -92,10 +68,9 @@ jogo. (Número do pior jogo).Obs.: O primeiro jogo não conta como novo recorde 
 Exemplo:
 String: “10 20 20 8 25 3 0 30 1”
 Retorno: [3, 7] (Significa que ele bateu três vezes seu recorde de melhor pontuação e a pior pontuação
-aconteceu no sétimo jogo.) */
+aconteceu no sétimo jogo.)
 
-
-/* 09)​ Construa uma função para um sistema de notas de uma instituição que possui a seguinte política de
+09)​ Construa uma função para um sistema de notas de uma instituição que possui a seguinte política de
 classificação: Todo aluno recebe uma nota de 0 a 100. Alunos com nota abaixo de 40 são reprovados. As notas
 possuem a seguinte regra de arredondamento: Se a diferença entre a nota e o próximo múltiplo de 5 for menor
 que 3, arredondar a nota para esse próximo múltiplo de 5. Se a nota for abaixo de 38, não é feito nenhum
